@@ -1,0 +1,21 @@
+{
+    "cache_ttl": 60,
+    "apis": [
+        {
+            "url": "http://[::1]/verdincms/public/api/monitor",
+            "token": "W9J0Zku8h1HZMqi6sEYf59fY1g4V1KjAjujlLSGysmOmbKvhGJOdAscfretICvqp"
+        },
+        {
+            "url": "http://[::1]/verdincms/public/api/monitor",
+            "token": "W9J0Zku8h1HZMqi6sEYf59fY1g4V1KjAjujlLSGysmOmbKvhGJOdAscfretICvqp"
+        },
+        {
+            "url": "http://[::1]/verdincms/public/api/monitor",
+            "token": "W9J0Zku8h1HZMqi6sEYf59fY1g4V1KjAjujlLSGysmOmbKvhGJOdAscfretICvqp"
+        },
+        {
+            "url": "http://[::1]/verdincms/public/api/monitor",
+            "token": "W9J0Zku8h1HZMqi6sEYf59fY1g4V1KjAjujlLSGysmOmbKvhGJOdAscfretICvqp"
+        }
+    ]
+}

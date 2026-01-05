@@ -1,6 +1,6 @@
 @import "tailwindcss";
-@source "./**/*.php";
-@source "./app/js/**/*.js";
+@source "./app/Views/**/*.php";
+@source "./public/js/**/*.js";
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
     themes: dark;
