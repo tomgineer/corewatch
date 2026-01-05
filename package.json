@@ -1,0 +1,14 @@
+{
+    "scripts": {
+        "dev": "tailwindcss -i ./tailwind/input.css -o ./app/css/tailwind.css --watch",
+        "build": "tailwindcss -i ./tailwind/input.css -o ./app/css/tailwind.css --minify"
+    },
+    "devDependencies": {
+        "@tailwindcss/cli": "^4.1.11",
+        "tailwindcss": "^4.1.11",
+        "daisyui": "^5.0.43"
+    },
+    "dependencies": {
+        "chart.js": "^4.5.0"
+    }
+}
