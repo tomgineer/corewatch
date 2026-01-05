@@ -17,7 +17,7 @@
         <?php if ($mode === 'error'): ?>
             <p>API error (status <?= esc($status) ?>): <?= esc((string) $message) ?></p>
         <?php elseif ($mode === 'stats'): ?>
-            <h2 class="mb-4">Server: <span class="text-accent"><?= esc((string) $server) ?></span></h2>
+            <h2 class="mb-4 ml-2 lg:ml-0">Server: <span class="text-accent"><?= esc((string) $server) ?></span></h2>
             <div class="grid grid-cols-2 md:grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-3 mb-12">
                 <?php foreach ($insights as $insight): ?>
                     <?php

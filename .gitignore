@@ -140,3 +140,6 @@ app/Config/Cookie.php
 
 # Node Modules
 node_modules/
+
+# API Calls
+apiCalls.json

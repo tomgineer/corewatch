@@ -1,0 +1,21 @@
+{
+    "cache_ttl": 60,
+    "apis": [
+        {
+            "url": "http://[::1]/verdincms/public/api/monitor",
+            "token": "<Your API Key>"
+        },
+        {
+            "url": "http://[::1]/verdincms/public/api/monitor",
+            "token": "<Your API Key>"
+        },
+        {
+            "url": "http://[::1]/verdincms/public/api/monitor",
+            "token": "<Your API Key>"
+        },
+        {
+            "url": "http://[::1]/verdincms/public/api/monitor",
+            "token": "<Your API Key>"
+        }
+    ]
+}
