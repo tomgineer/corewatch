@@ -14,7 +14,7 @@ function toggleFullScreen() {
     if (savedState !== null) {
         toggle.checked = savedState === '1';
         displayWrappers.forEach((wrapper) => {
-            wrapper.classList.toggle('max-w-3xl', !toggle.checked);
+            wrapper.classList.remove('max-w-5xl', !toggle.checked);
         });
     }
 
@@ -22,7 +22,7 @@ function toggleFullScreen() {
         const isEnabled = event.target.checked;
         localStorage.setItem('fullScreen', isEnabled ? '1' : '0');
         displayWrappers.forEach((wrapper) => {
-            wrapper.classList.toggle('max-w-3xl', !isEnabled);
+            wrapper.classList.toggle('max-w-5xl', !isEnabled);
         });
     });
 }
@@ -33,14 +33,32 @@ function toggleAutoRefresh() {
         return;
     }
 
+    const refreshMetaName = 'auto-refresh';
+    const applyRefreshMeta = (isEnabled) => {
+        const existingMeta = document.querySelector(`meta[name="${refreshMetaName}"]`);
+        if (isEnabled) {
+            if (existingMeta) {
+                return;
+            }
+            const meta = document.createElement('meta');
+            meta.setAttribute('name', refreshMetaName);
+            meta.setAttribute('http-equiv', 'refresh');
+            meta.setAttribute('content', '60');
+            document.head.appendChild(meta);
+        } else if (existingMeta) {
+            existingMeta.remove();
+        }
+    };
+
     const savedState = localStorage.getItem('refresh');
     if (savedState !== null) {
         toggle.checked = savedState === '1';
+        applyRefreshMeta(toggle.checked);
     }
 
     toggle.addEventListener('change', (event) => {
         const isEnabled = event.target.checked;
-        console.log('refresh:', isEnabled);
         localStorage.setItem('refresh', isEnabled ? '1' : '0');
+        applyRefreshMeta(isEnabled);
     });
 }

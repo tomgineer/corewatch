@@ -21,12 +21,11 @@ require __DIR__ . '/app/php/bootstrap.php';
     <title>Server Monitoring</title>
 </head>
 
-<body class="min-h-screen">
+<body class="min-h-screen flex flex-col">
 
-    <main class="mx-auto py-6 pb-12 lg:py-12 lg:pb-24 px-4">
+    <main class="mx-auto py-6 pb-12 lg:py-12 lg:pb-24 px-4 flex-1 min-w-full">
 
         <?php require __DIR__ . '/options.php'; ?>
-        <!--<h1>Server Monitoring</h1>-->
 
         <?php if (empty($results)): ?>
             <p>No API URLs configured.</p>
@@ -62,6 +61,8 @@ require __DIR__ . '/app/php/bootstrap.php';
             <?php endforeach; ?>
         <?php endif; ?>
     </main>
+
+    <?php require __DIR__ . '/footer.php'; ?>
 
 </body>
 

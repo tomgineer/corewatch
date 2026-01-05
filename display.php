@@ -4,7 +4,7 @@
     $insights = is_array($insights ?? null) ? $insights : [];
 ?>
 
-<div class="max-w-3xl mx-auto" data-display-wrapper>
+<div class="max-w-5xl mx-auto" data-display-wrapper>
     <h1 class="mb-4">Server: <span class="text-accent"><?=esc($server)?></span></h1>
 
     <div class="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-2 mb-12">
@@ -15,7 +15,7 @@
                     $value = $insight['value'] ?? '';
                     $desc = $insight['desc'] ?? '';
                 ?>
-                <div class="stats shadow-xl bg-base-200">
+                <div class="stats lg:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.6)] bg-base-200">
                     <div class="stat">
                         <div class="stat-title text-sm"><?=esc($title)?></div>
                         <div class="stat-value"><?=esc($value)?></div>
