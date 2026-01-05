@@ -2,7 +2,7 @@
     <div class="flex-1">
         <a class="btn btn-ghost text-xl">Server Monitoring</a>
     </div>
-    <div class="flex gap-4 px-4">
+    <div class="hidden lg:flex lg:gap-4 px-4">
 
         <fieldset class="fieldset">
             <label class="label">

@@ -3,8 +3,8 @@ use CodeIgniter\Model;
 
 class AppModel extends Model {
 
-/**
- * Fetch API configurations from apiCalls.json and return responses.
+    /**
+     * Fetch API configurations from apiCalls.json and return responses.
  *
  * @return array{cache_ttl: int|null, apis: array<int, array{index: int, url: string, response: array{error: string|null, status: int, data: array|null, raw: string|null}}>}|array{error: string, apis: array<int, mixed>}
  */
@@ -71,9 +71,72 @@ public function fetchApis(): array {
     return $payload;
 }
 
-/**
- * Call a single API endpoint and normalize the response.
- *
+    /**
+     * Normalize API responses into view-ready results with error handling.
+     *
+     * @return array<int, array{mode: string, url: string, status?: int, message?: string, server?: string, insights?: array, raw?: string}>
+     */
+public function getDisplayResults(): array {
+    $results = $this->fetchApis();
+    $apis = is_array($results['apis'] ?? null) ? $results['apis'] : [];
+    $display = [];
+
+    foreach ($apis as $item) {
+        $url = isset($item['url']) ? (string) $item['url'] : '';
+        $response = is_array($item['response'] ?? null) ? $item['response'] : [];
+        $error = $response['error'] ?? null;
+        $status = (int) ($response['status'] ?? 0);
+
+        if (is_string($error) && $error !== '') {
+            $display[] = [
+                'mode' => 'error',
+                'url' => $url,
+                'status' => $status,
+                'message' => $error,
+            ];
+            continue;
+        }
+
+        $data = $response['data'] ?? null;
+        if (is_array($data)) {
+            $payload = is_array($data['data'] ?? null) ? $data['data'] : $data;
+            $server = $payload['server'] ?? 'Unknown server';
+            $insights = is_array($payload['insights'] ?? null) ? $payload['insights'] : [];
+
+            if (!empty($insights)) {
+                $display[] = [
+                    'mode' => 'stats',
+                    'url' => $url,
+                    'server' => (string) $server,
+                    'insights' => $insights,
+                ];
+                continue;
+            }
+        }
+
+        $raw = $response['raw'] ?? null;
+        if (is_string($raw) && $raw !== '') {
+            $display[] = [
+                'mode' => 'raw',
+                'url' => $url,
+                'raw' => $raw,
+            ];
+            continue;
+        }
+
+        $display[] = [
+            'mode' => 'empty',
+            'url' => $url,
+            'message' => 'No data returned.',
+        ];
+    }
+
+    return $display;
+}
+
+    /**
+     * Call a single API endpoint and normalize the response.
+     *
  * @param string $url API endpoint URL.
  * @param string $token Bearer token for authentication.
  * @return array{error: string|null, status: int, data: array|null, raw: string|null}

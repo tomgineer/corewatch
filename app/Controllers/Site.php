@@ -6,7 +6,7 @@ class Site extends BaseController {
     public function index(): string {
         $model = new AppModel();
         $data = [
-            'apiResults' => $model->fetchApis(),
+            'displayResults' => $model->getDisplayResults(),
         ];
         return view('front', $data);
     }
