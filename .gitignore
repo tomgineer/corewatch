@@ -15,3 +15,9 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 .local/
 node_modules/
 /vendor/
+
+# Assets
+app/assets/
+
+# Gonfig File
+app/php/config.php

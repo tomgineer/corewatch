@@ -5,8 +5,8 @@
     themes: dark;
 }
 @theme {
-    --font-sans: "Roboto Condensed", ui-sans-serif, system-ui, sans-serif;
-    --font-heading: "Roboto Condensed", ui-sans-serif, system-ui, sans-serif;
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-heading: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {

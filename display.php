@@ -3,10 +3,11 @@
     $server = $server ?? 'Unknown server';
     $insights = is_array($insights ?? null) ? $insights : [];
 ?>
-<section>
-    <h1><?=esc($server)?></h1>
 
-    <div class="grid">
+<div class="max-w-3xl mx-auto">
+    <h1 class="mb-4">Server: <span class="text-accent"><?=esc($server)?></span></h1>
+
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-2 mb-12">
         <?php if (!empty($insights)): ?>
             <?php foreach ($insights as $insight): ?>
                 <?php
@@ -14,9 +15,9 @@
                     $value = $insight['value'] ?? '';
                     $desc = $insight['desc'] ?? '';
                 ?>
-                <div class="stats shadow">
+                <div class="stats shadow bg-base-200">
                     <div class="stat">
-                        <div class="stat-title"><?=esc($title)?></div>
+                        <div class="stat-title text-sm"><?=esc($title)?></div>
                         <div class="stat-value"><?=esc($value)?></div>
                         <div class="stat-desc"><?=esc($desc)?></div>
                     </div>
@@ -26,4 +27,4 @@
             <p>No insights returned.</p>
         <?php endif; ?>
     </div>
-</section>
+</div>
