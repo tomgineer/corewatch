@@ -12,8 +12,7 @@
 
 @layer base {
     body {
-        @apply font-sans bg-center bg-no-repeat bg-cover bg-fixed;
-        background-image: url("../gfx/bg.svg");
+        @apply font-sans;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -28,3 +27,7 @@
         font-weight: 500;
     }
 }
+
+
+@import "./components.css";
+@import "./utilities.css";

@@ -1,6 +1,8 @@
-<div class="navbar shadow-sm bg-black/20 backdrop-blur-md">
+<div class="navbar bg-base-300 md:shadow-sm md:bg-black/20 md:backdrop-blur-md">
     <div class="flex-1">
-        <a class="btn btn-ghost text-xl">Server Monitoring</a>
+        <a class="btn btn-ghost text-xl">
+            <img class="h-6 w-auto" src="<?=base_url('gfx/logo.svg')?>" alt="CoreWatch Logo">
+        </a>
     </div>
     <div class="hidden lg:flex lg:gap-4 px-4">
 

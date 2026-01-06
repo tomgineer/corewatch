@@ -1,0 +1,9 @@
+@layer utilities {
+    @media (min-width: 768px) {
+        .bg-waves {
+            @apply bg-center bg-no-repeat bg-cover bg-fixed;
+            background-image: url("../gfx/bg.svg");
+        }
+    }
+
+}
