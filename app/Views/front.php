@@ -14,7 +14,7 @@
     <link rel="icon" type="image/svg+xml" href="<?= base_url('gfx/favicon.svg') ?>">
 </head>
 
-<body class="min-h-screen flex flex-col bg-waves">
+<body class="min-h-screen flex flex-col bg-glow">
     <header>
         <?= $this->include('nav') ?>
     </header>

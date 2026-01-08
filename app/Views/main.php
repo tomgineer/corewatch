@@ -25,7 +25,7 @@
                         $value = $insight['value'] ?? '';
                         $desc = $insight['desc'] ?? '';
                     ?>
-                    <div class="stats lg:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.6)] bg-base-200">
+                    <div class="stats bg-base-300">
                         <div class="stat">
                             <div class="stat-title"><?= esc((string) $title) ?></div>
                             <div class="stat-value"><?= esc((string) $value) ?></div>

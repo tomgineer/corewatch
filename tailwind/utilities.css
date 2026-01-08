@@ -1,8 +1,8 @@
 @layer utilities {
     @media (min-width: 768px) {
-        .bg-waves {
-            @apply bg-center bg-no-repeat bg-cover bg-fixed;
-            background-image: url("../gfx/bg.svg");
+        .bg-glow {
+            @apply bg-no-repeat;
+            background-image: radial-gradient(650px circle at 20% 0, color-mix(in lch, var(--color-base-100) 95%, white 5%), transparent);
         }
     }
 

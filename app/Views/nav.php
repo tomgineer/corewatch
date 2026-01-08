@@ -1,4 +1,4 @@
-<div class="navbar bg-base-300 md:shadow-sm md:bg-black/20 md:backdrop-blur-md">
+<div class="navbar bg-base-300 md:shadow-sm">
     <div class="flex-1">
         <a class="btn btn-ghost text-xl">
             <img class="h-6 w-auto" src="<?=base_url('gfx/logo.svg')?>" alt="CoreWatch Logo">
